@@ -60,7 +60,7 @@ function AutoRebirth()
 end
 function TweenToEgg()
     spawn(function()
-        local New_CFrame = game:GetService("Workspace").Eggs[_G.SettingsTable.EggTP].Sign.CFrame
+        local New_CFrame = game:GetService("Workspace").Eggs[_G.SettingsTable.EggTP].Secondary.Part.CFrame
         local ts = game:GetService('TweenService')
         local char = game.Players.LocalPlayer.Character
         local part = char.HumanoidRootPart
