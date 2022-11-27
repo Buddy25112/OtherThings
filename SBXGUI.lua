@@ -60,6 +60,8 @@ function AutoRebirth()
 end
 function TweenToEgg()
     spawn(function()
+        game:GetService("Workspace").Eggs[_G.SettingsTable.EggTP].Sign.CanCollide = false
+        wait(1)
 	    local Player = game.Players.LocalPlayer
 	    if Player.Character then
 		Player.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Eggs[_G.SettingsTable.EggTP].Sign.CFrame
@@ -287,28 +289,6 @@ if _G.SettingsTable.AutoAddLegendary then
     SetAutoLegends()
 end
 
-local Headers = {["content-type"] = "application/json"}
-local Chat = game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatChannelParentFrame["Frame_MessageLogDisplay"].Scroller
-
--- The Main Function
-local SecretsHatched
-Chat.ChildAdded:Connect(function(instance)
-    if string.find(instance.TextLabel.Text,"Server") then
-                if string.find(instance.TextLabel.Text,"hatched") then
-                    if string.find(instance.TextLabel.Text,"a") then
-                        if string.find(instance.TextLabel.Text, game:GetService("Players").LocalPlayer.Name) then
-                            if string.find(instance.TextLabel.Text, "Legendary") then
-                                LoadSettingsSecretsList()
-                                SecretsHatched = _G.SecretsList.TotalSecretsHatched + 1
-                                _G.SecretsList.TotalSecretsHatched = SecretsHatched
-                                SaveSettingsSecretsList()
-                        end
-                    end
-                end
-            end
-        end
-end)
-
 -- Library
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Sandbox Hatchers X UI", "Midnight")
@@ -469,5 +449,5 @@ while wait() do
     local plr = game.Players.LocalPlayer
     local count = 0
     count = game:GetService("Players")[username].leaderstats.Eggs.Value
-    EggsLabel:UpdateLabel("Eggs Hatched: " .. abb(count) .. " | Legendaries Hatched: " .. abb(_G.SecretsList.TotalSecretsHatched))
+    EggsLabel:UpdateLabel("Eggs Hatched: " .. abb(count))
 end
