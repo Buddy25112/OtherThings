@@ -1,3 +1,4 @@
+-- BL Legit GUI
 _G.SettingsTable = {
     AutoBubble = false;
     EggType = "";
@@ -11,11 +12,11 @@ _G.SettingsTable = {
 local newCFrame1 = CFrame.new(150.346, 185.688, 1733.41)
 local newCFrame2 = CFrame.new(100.973, 185.348, 1788.32)
 local newCFrame3 = CFrame.new(24.4608, 185.72, 1886.87)
-local newCFrame4 = CFrame.new(254.349, 128.76, 2377.06)
-local newCFrame5 = CFrame.new(249.332, 128.761, 2425)
-local newCFrame6 = CFrame.new(201.718, 128.761, 2445.62)
-local newCFrame7 = CFrame.new(165.471, 128.761, 2424.63)
-local newCFrame8 = CFrame.new(170.384, 128.761, 2369.25)
+local newCFrame4 = CFrame.new(267.048, 128.76, 2377.06)
+local newCFrame5 = CFrame.new(260, 128.761, 2442.74)
+local newCFrame6 = CFrame.new(206.33, 128.149, 2468.26)
+local newCFrame7 = CFrame.new(150.985, 128.761, 2435.06)
+local newCFrame8 = CFrame.new(155.285, 128.761, 2367.)
 local newCFrame9 = CFrame.new(520.651, 126.868, 2143.45)
 local newCFrame10 = CFrame.new(517.319, 126.868, 2059.7)
 local newCFrame11 = CFrame.new(510.226, 126.868, 2004.91)
@@ -69,7 +70,7 @@ function AutoFarmCandyCanes()
         local Player = game.Players.LocalPlayer
         if Player.Character then
             -- 5 second wait time
-            while wait(5.1) do
+            while wait(.2) do
                 if not _G.SettingsTable.FarmCandyCanes then break end
                 -- Houses, 2.4 Seconds
                 wait(.2)
