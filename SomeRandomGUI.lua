@@ -1,4 +1,4 @@
--- BL Legit GUI
+
 _G.SettingsTable = {
     AutoBubble = false;
     EggType = "";
