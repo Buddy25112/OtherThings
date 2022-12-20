@@ -6,6 +6,7 @@ _G.SettingsTable = {
     EggTP = "";
     TeleportToTheEgg = false;
     FarmCandyCanes = false;
+    FPSSettings = 60;
 }
 
 local newCFrame1 = CFrame.new(150.346, 185.688, 1733.41)
@@ -144,6 +145,12 @@ function HatchEgg()
     end)
 end
 
+function SetFPSValue()
+    spawn(function()
+        setfpscap(_G.SettingsTable.FPSSettings)
+    end)
+end
+
 function AutoBubbles()
     spawn(function()
         while wait(1) do
@@ -191,8 +198,8 @@ local CreditsSection2 = CreditsTab:CreateSection("Helper: Cor#0002")
 local CreditsSection3 = CreditsTab:CreateSection("Helper: wYn#0001 (Youtube Guides)")
 local CreditsSection4 = CreditsTab:CreateSection("⚠️ Saved Settings Will Auto Load When Executed ⚠️")
 local CreditsSection5 = CreditsTab:CreateSection("--------------------------------------------------------------------------------------")
-local CreditsSection6 = CreditsTab:CreateSection("Last Updated: 2022-12-16")
-local CreditsSection7 = CreditsTab:CreateSection("Last Update: Brand New")
+local CreditsSection6 = CreditsTab:CreateSection("Last Updated: 2022-12-19")
+local CreditsSection7 = CreditsTab:CreateSection("Last Update: Added FPS Setting")
 local CreditsSection8 = CreditsTab:CreateSection("Upcoming Update: More New Features")
 local CreditsSection9 = CreditsTab:CreateSection("Discord Link: https://discord.gg/83aFw8rGM8")
 local CreditsSection10 = CreditsTab:CreateSection("-------------------------------------------------------------------------------------")
@@ -207,7 +214,7 @@ local EggFarmingTab = Window:CreateTab("Egg Farming")
 local SettingsTab = Window:CreateTab("Settings")
 
 -- Autofarm
-local AutoFarmSelection = AutoFarmTab:CreateSection("Auto Rebirth")
+local AutoFarmSelection = AutoFarmTab:CreateSection("Auto Settings")
 local AutoBubble = AutoFarmTab:CreateToggle({
 	Name = "Auto Bubble (1 sec Cooldown)",
 	CurrentValue = false,
@@ -228,6 +235,21 @@ local AutoTPToCandyCanes = AutoFarmTab:CreateToggle({
         if bool then
             AutoFarmCandyCanes()
         end
+	end,
+})
+local FPSSection = AutoFarmTab:CreateSection("FPS Settings (Synapse Required)")
+local ChooseFPSValue = AutoFarmTab:CreateInput({
+	Name = "Choose FPS Value:",
+	PlaceholderText = "Default = 60",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(FPStxt)
+		_G.SettingsTable.FPSSettings = FPStxt
+	end,
+})
+local SetFPSValues = AutoFarmTab:CreateButton({
+	Name = "Set FPS Value",
+	Callback = function()
+        SetFPSValue()
 	end,
 })
 
@@ -321,6 +343,7 @@ end
 end
 
 LoadSettingsTableSettings()
+SetFPSValue()
 
 -- Settings
 local SettingsSection = SettingsTab:CreateSection("Setting Options (Settings Save Per Account)")
@@ -365,5 +388,3 @@ while wait() do
     count = game:GetService("Players")[username].leaderstats.EggsOpened.Value
     EggsLabel:Set("Eggs Hatched: " .. abb(count))
 end
-
-
