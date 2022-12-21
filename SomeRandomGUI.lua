@@ -1,3 +1,4 @@
+-- BL Legit GUI
 _G.SettingsTable = {
     AutoBubble = false;
     EggType = "";
@@ -5,8 +6,9 @@ _G.SettingsTable = {
     MultiHatchVariable = false;
     EggTP = "";
     TeleportToTheEgg = false;
-    FarmCandyCanes = false;
+    FarmCandyCanes1 = false;
     FPSSettings = 60;
+    FarmCandyCanes2 = false;
 }
 
 local newCFrame1 = CFrame.new(150.346, 185.688, 1733.41)
@@ -34,6 +36,15 @@ local newCFrame22 = CFrame.new(461.325, 126.964, 1956.1)
 local newCFrame23 = CFrame.new(482.333, 126.961, 1906.89)
 local newCFrame24 = CFrame.new(423.744, 126.931, 1917.34)
 local newCFrame25 = CFrame.new(403.845, 126.769, 1888.69)
+
+local SmallFarm1 = CFrame.new(189.342, 127.155, 2339.06)
+local SmallFarm2 = CFrame.new(153.037, 127.155, 2359.41)
+local SmallFarm3 = CFrame.new(145.958, 127.155, 2410.17)
+local SmallFarm4 = CFrame.new(173.54, 127.155, 2462.69)
+local SmallFarm5 = CFrame.new(216.208, 127.155, 2470.83)
+local SmallFarm6 = CFrame.new(262.403, 127.155, 2445.66)
+local SmallFarm7 = CFrame.new(280.166, 127.155, 2401.41)
+
 
 local username = game:GetService("Players").LocalPlayer.Name
 
@@ -65,13 +76,39 @@ function TeleportToEgg()
     end)
 end
 
-function AutoFarmCandyCanes()
+function AutoFarmCandyCanes1()
     spawn(function()
         local Player = game.Players.LocalPlayer
         if Player.Character then
             -- 5 second wait time
             while wait(.2) do
-                if not _G.SettingsTable.FarmCandyCanes then break end
+                if not _G.SettingsTable.FarmCandyCanes1 then break end
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm1
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm2
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm3
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm4
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm5
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm6
+                wait(.71)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm7
+            end
+        end        
+    end)
+end
+
+function AutoFarmCandyCanes2()
+    spawn(function()
+        local Player = game.Players.LocalPlayer
+        if Player.Character then
+            -- 5 second wait time
+            while wait(.2) do
+                if not _G.SettingsTable.FarmCandyCanes2 then break end
                 -- Houses, 2.4 Seconds
                 wait(.2)
                 Player.Character.HumanoidRootPart.CFrame = newCFrame1
@@ -226,14 +263,25 @@ local AutoBubble = AutoFarmTab:CreateToggle({
         end
 	end,
 })
-local AutoTPToCandyCanes = AutoFarmTab:CreateToggle({
-	Name = "Auto Farm Candy Canes",
+local AutoTPToCandyCanes1 = AutoFarmTab:CreateToggle({
+	Name = "Auto Farm Candy Canes (OP FARM)",
 	CurrentValue = false,
 	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(bool)
-        _G.SettingsTable.FarmCandyCanes = bool
+        _G.SettingsTable.FarmCandyCanes1 = bool
         if bool then
-            AutoFarmCandyCanes()
+            AutoFarmCandyCanes1()
+        end
+	end,
+})
+local AutoTPToCandyCanes2 = AutoFarmTab:CreateToggle({
+	Name = "Auto Farm Candy Canes (Less OP Farm)",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(bool)
+        _G.SettingsTable.FarmCandyCanes2 = bool
+        if bool then
+            AutoFarmCandyCanes2()
         end
 	end,
 })
@@ -317,7 +365,6 @@ function LoadSettingsTableSettings()
         QuadOrMultiEggHatch:Set(_G.SettingsTable.MultiHatchVariable)
         StartHatchingEgg:Set(_G.SettingsTable.BuyEgg)
         TeleportToEgg:Set(_G.SettingsTable.TeleportToTheEgg)
-        AutoTPToCandyCanes:Set(_G.SettingsTable.FarmCandyCanes)
         print("Settings: Loaded")
         game.StarterGui:SetCore(
             "SendNotification",
