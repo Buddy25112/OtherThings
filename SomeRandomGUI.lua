@@ -81,7 +81,7 @@ function AutoFarmCandyCanes2()
         local Player = game.Players.LocalPlayer
         if Player.Character then
             -- 5 second wait time
-            while wait(1) do
+            while wait(1.5) do
                 if not _G.SettingsTable.FarmCandyCanes2 then break end
                 wait(.71)
                 Player.Character.HumanoidRootPart.CFrame = SmallFarm1
@@ -107,7 +107,7 @@ function AutoFarmCandyCanes1()
         local Player = game.Players.LocalPlayer
         if Player.Character then
             -- 5 second wait time
-            while wait(.5) do
+            while wait(1.5) do
                 if not _G.SettingsTable.FarmCandyCanes1 then break end
                 -- Houses, 2.4 Seconds
                 wait(.2)
