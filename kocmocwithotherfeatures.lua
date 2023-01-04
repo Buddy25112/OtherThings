@@ -1,5 +1,5 @@
 -- NOT MY SCRIPT!!!
--- Credits to the Kocmoc Developers, i just needed a way to auto convert my honey after a specific time frame!
+-- Credits to the Kocmoc Developers!
 repeat wait(0.1) until game:IsLoaded()
 
 getgenv().Star = "⭐"
@@ -40,7 +40,7 @@ for _, v in pairs(game:GetService("CoreGui"):GetDescendants()) do
     end
 end
 getgenv().temptable = {
-    version = "3.2.9",
+    version = "3.3.1",
     blackfield = "Sunflower Field",
     redfields = {},
     bluefields = {},
@@ -266,6 +266,7 @@ getgenv().kocmoc = {
         farmcoco = false,
         farmflame = false,
         farmclouds = false,
+        farmdupedtokens = false,
         killmondo = false,
         killvicious = false,
         loopspeed = false,
@@ -649,6 +650,16 @@ function getcloud()
     end
 end
 
+function getdupedtokens()
+    for i,v in next, game:GetService("Workspace").Camera.DupedTokens:GetChildren() do
+        if v:FindFirstChild("FrontDecal") then 
+            if tonumber((v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude) < temptable.magnitude/1.4 then
+                api.walkTo(v.Position)
+            end
+        end
+    end
+end
+
 function getcoco(v)
     if temptable.coconut then repeat task.wait() until not temptable.coconut end
     temptable.coconut = true
@@ -926,6 +937,7 @@ farmo:CreateToggle("Farm Precise Crosshairs", nil, function(State) kocmoc.toggle
 farmo:CreateToggle("Farm Fuzzy Bombs", nil, function(State) kocmoc.toggles.farmfuzzy = State end)
 farmo:CreateToggle("Farm Under Balloons", nil, function(State) kocmoc.toggles.farmunderballoons = State end)
 farmo:CreateToggle("Farm Under Clouds", nil, function(State) kocmoc.toggles.farmclouds = State end)
+farmo:CreateToggle("Farm Duped Tokens", nil, function(State) kocmoc.toggles.farmdupedtokens = State end)
 farmo:CreateLabel("")
 farmo:CreateToggle("Auto Honey Mask",nil,function(bool)
     kocmoc.toggles.honeymaskconv = bool
@@ -939,17 +951,17 @@ local farmt = farmtab:CreateSection("Farming")
 farmt:CreateToggle("Auto Dispenser [⚙]", nil, function(State) kocmoc.toggles.autodispense = State end)
 farmt:CreateToggle("Auto Field Boosters [⚙]", nil, function(State) kocmoc.toggles.autoboosters = State end)
 farmt:CreateToggle("Auto Wealth Clock", nil, function(State) kocmoc.toggles.clock = State end)
--- BEESMAS MARKER farmt:CreateToggle("Auto Gingerbread Bears", nil, function(State) kocmoc.toggles.collectgingerbreads = State end)
--- BEESMAS MARKER farmt:CreateToggle("Auto Samovar", nil, function(State) kocmoc.toggles.autosamovar = State end)
--- BEESMAS MARKER farmt:CreateToggle("Auto Stockings", nil, function(State) kocmoc.toggles.autostockings = State end)
+farmt:CreateToggle("Auto Gingerbread Bears [B]", nil, function(State) kocmoc.toggles.collectgingerbreads = State end)
+farmt:CreateToggle("Auto Samovar [B]", nil, function(State) kocmoc.toggles.autosamovar = State end)
+farmt:CreateToggle("Auto Stockings [B]", nil, function(State) kocmoc.toggles.autostockings = State end)
 farmt:CreateToggle("Auto Planters", nil, function(State) kocmoc.toggles.autoplanters = State end):AddToolTip("Will re-plant your planters after converting, if they hit 100%")
--- BEESMAS MARKER farmt:CreateToggle("Auto Honey Candles", nil, function(State) kocmoc.toggles.autocandles = State end)
--- BEESMAS MARKER farmt:CreateToggle("Auto Beesmas Feast", nil, function(State) kocmoc.toggles.autofeast = State end)
--- BEESMAS MARKER farmt:CreateToggle("Auto Onett's Lid Art", nil, function(State) kocmoc.toggles.autoonettart = State end)
+farmt:CreateToggle("Auto Honey Candles [B]", nil, function(State) kocmoc.toggles.autocandles = State end)
+farmt:CreateToggle("Auto Beesmas Feast [B]", nil, function(State) kocmoc.toggles.autofeast = State end)
+farmt:CreateToggle("Auto Onett's Lid Art [B]", nil, function(State) kocmoc.toggles.autoonettart = State end)
 farmt:CreateToggle("Auto Free Antpasses", nil, function(State) kocmoc.toggles.freeantpass = State end)
 farmt:CreateToggle("Farm Sprouts", nil, function(State) kocmoc.toggles.farmsprouts = State end)
 farmt:CreateToggle("Farm Puffshrooms", nil, function(State) kocmoc.toggles.farmpuffshrooms = State end)
--- BEESMAS MARKER farmt:CreateToggle("Farm Snowflakes [⚠️]", nil, function(State) kocmoc.toggles.farmsnowflakes = State end)
+farmt:CreateToggle("Farm Snowflakes [🛡️] [B]", nil, function(State) kocmoc.toggles.farmsnowflakes = State end)
 farmt:CreateToggle("Teleport To Rares [⚠️]", nil, function(State) kocmoc.toggles.farmrares = State end)
 farmt:CreateToggle("Auto Accept/Confirm Quests [⚙]", nil, function(State) kocmoc.toggles.autoquest = State end)
 farmt:CreateToggle("Auto Do Quests [⚙]", nil, function(State) kocmoc.toggles.autodoquest = State end)
@@ -1512,6 +1524,7 @@ task.spawn(function() while task.wait() do
                 if kocmoc.toggles.farmclosestleaf then closestleaf() end
                 if kocmoc.toggles.farmbubbles then getbubble() end
                 if kocmoc.toggles.farmclouds then getcloud() end
+                if kocmoc.toggles.farmdupedtokens then getdupedtokens() end
                 if kocmoc.toggles.farmunderballoons then getballoons() end
                 if not kocmoc.toggles.donotfarmtokens and done then gettoken() end
                 if not kocmoc.toggles.farmflower then getflower() end
@@ -1792,17 +1805,22 @@ local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function() vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)task.wait(1)vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 
-task.spawn(function()while task.wait() do
-    if kocmoc.toggles.farmsnowflakes then
-        task.wait(3)
-        for i,v in next, temptable.tokenpath:GetChildren() do
-            if v:FindFirstChildOfClass("Decal") and v:FindFirstChildOfClass("Decal").Texture == "rbxassetid://6087969886" and v.Transparency == 0 then
-                api.humanoidrootpart().CFrame = CFrame.new(v.Position.X, v.Position.Y+3, v.Position.Z)
-                break
-            end
-        end
+local canTeleport = true
+game:GetService("Workspace").Particles.Snowflakes.ChildAdded:Connect(function(snowflake)
+    if canTeleport == true and kocmoc.toggles.farmsnowflakes == true then
+        local hash = tostring(math.random(1,10000))
+        snowflake.Name = hash
+        canTeleport = false
+        repeat
+           wait()
+           getgenv().temptable.float = true
+           game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = snowflake.CFrame + Vector3.new(0,7.5,0)
+        until game:GetService("Workspace").Particles.Snowflakes:FindFirstChild(hash) == nil
+        getgenv().temptable.float = false
+        wait(1)
+        canTeleport = true
     end
-end end)
+end)
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
     humanoid = char:WaitForChild("Humanoid")
@@ -1902,48 +1920,6 @@ local function fetchVisualMonsterString(v)
             end
         end
     return mobText
-end
-
-function converthoney1()
-    task.wait(0)
-    if game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.TextBox.Text ~= "Stop Making Honey" and game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.BackgroundColor3 ~= Color3.new(201, 39, 28) or (game:GetService("Players").LocalPlayer.SpawnPos.Value.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > 13 then
-        api.tween(1, game:GetService("Players").LocalPlayer.SpawnPos.Value * CFrame.fromEulerAnglesXYZ(0, 110, 0) + Vector3.new(0, 0, 9))
-        task.wait(.9)
-        if game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.TextBox.Text ~= "Stop Making Honey" and game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.BackgroundColor3 ~= Color3.new(201, 39, 28) or (game:GetService("Players").LocalPlayer.SpawnPos.Value.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > 13 then game:GetService("ReplicatedStorage").Events.PlayerHiveCommand:FireServer("ToggleHoneyMaking") end
-            task.wait(.1)
-        end
-    end
-
-function autoconvertbagspacetime()
-    spawn(function()
-        kocmoc.toggles.autofarm = false
-        temptable.tokensfarm = false
-        api.tween(2, game:GetService("Players").LocalPlayer.SpawnPos.Value * CFrame.fromEulerAnglesXYZ(0, 110, 0) + Vector3.new(0, 0, 9))
-        task.wait(2)
-        temptable.converting = true
-        repeat
-            converthoney1()
-            until game.Players.LocalPlayer.CoreStats.Pollen.Value == 0
-            if gethiveballoon() == false or not kocmoc.toggles.convertballoons then
-                wait(5)
-                kocmoc.toggles.autofarm = true
-            end
-        if kocmoc.toggles.convertballoons and gethiveballoon() then
-            task.wait(6)
-        repeat
-            task.wait()
-            converthoney1()
-            until gethiveballoon() == false or not kocmoc.toggles.convertballoons
-            end
-            temptable.converting = false
-            temptable.act = temptable.act + 1
-            task.wait(10)
-            if kocmoc.toggles.autoplanters then 
-                collectplanters()
-                task.wait(30)
-            end
-            kocmoc.toggles.autofarm = true
-        end)
 end
 
 local function getToyCooldown(toy)
@@ -2048,6 +2024,3 @@ if _G.autoload then if isfile("kocmoc/BSS_".._G.autoload..".json") then kocmoc =
 for _, part in next, workspace:FindFirstChild("FieldDecos"):GetDescendants() do if part:IsA("BasePart") then part.CanCollide = false part.Transparency = part.Transparency < 0.5 and 0.5 or part.Transparency task.wait() end end
 for _, part in next, workspace:FindFirstChild("Decorations"):GetDescendants() do if part:IsA("BasePart") and (part.Parent.Name == "Bush" or part.Parent.Name == "Blue Flower") then part.CanCollide = false part.Transparency = part.Transparency < 0.5 and 0.5 or part.Transparency task.wait() end end
 for i,v in next, workspace.Decorations.Misc:GetDescendants() do if v.Parent.Name == "Mushroom" then v.CanCollide = false v.Transparency = 0.5 end end
-while wait(900) do
-    autoconvertbagspacetime()
-end
