@@ -1,4 +1,4 @@
--- BL Legit GUI
+
 _G.SettingsTable = {
     AutoBubble = false;
     EggType = "";
@@ -190,7 +190,7 @@ end
 
 function AutoBubbles()
     spawn(function()
-        while wait(1) do
+        while wait(.4) do
             if not _G.SettingsTable.AutoBubble then break end
             local args = {
                 [1] = game:GetService("Players").LocalPlayer
@@ -253,7 +253,7 @@ local SettingsTab = Window:CreateTab("Settings")
 -- Autofarm
 local AutoFarmSelection = AutoFarmTab:CreateSection("Auto Settings")
 local AutoBubble = AutoFarmTab:CreateToggle({
-	Name = "Auto Bubble (1 sec Cooldown)",
+	Name = "Auto Bubble (0.4 sec Cooldown)",
 	CurrentValue = false,
 	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(bool)
