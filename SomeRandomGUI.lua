@@ -10,40 +10,66 @@ _G.SettingsTable = {
     FPSSettings = 60;
     FarmCandyCanes2 = false;
 }
+ 
+-- 18 Second Respawn
+local newCFrame1 = CFrame.new(-369.354, 167.961, 1773.74) -- Chest
+local newCFrame2 = CFrame.new(-358.608, 157.198, 1810.09) -- Chest
+local newCFrame3 = CFrame.new(-281.795, 157.218, 1731.59) -- Chest
+local newCFrame4 = CFrame.new(-300.087, 157.198, 1804.74) -- Chest
+local newCFrame5 = CFrame.new(-344.167, 157.283, 1753.79) -- Chest
+local newCFrame6 = CFrame.new(-261.165, 157.198, 1766.69)  -- Chest
+-- 1.2 Seconds
 
-local newCFrame1 = CFrame.new(150.346, 185.688, 1733.41)
-local newCFrame2 = CFrame.new(100.973, 185.348, 1788.32)
-local newCFrame3 = CFrame.new(24.4608, 185.72, 1886.87)
-local newCFrame4 = CFrame.new(189.342, 127.155, 2339.06)
-local newCFrame5 = CFrame.new(153.037, 127.155, 2359.41)
-local newCFrame6 = CFrame.new(145.958, 127.155, 2410.17)
-local newCFrame7 = CFrame.new(173.54, 127.155, 2462.69)
-local newCFrame8 = CFrame.new(155.285, 128.761, 2367.)
-local newCFrame9 = CFrame.new(520.651, 126.868, 2143.45)
-local newCFrame10 = CFrame.new(517.319, 126.868, 2059.7)
-local newCFrame11 = CFrame.new(510.226, 126.868, 2004.91)
-local newCFrame12 = CFrame.new(508.818, 126.868, 1909.43)
-local newCFrame13 = CFrame.new(216.208, 127.155, 2470.83)
-local newCFrame14 = CFrame.new(262.403, 127.155, 2445.66)
-local newCFrame15 = CFrame.new(280.166, 127.155, 2401.41)
-local newCFrame16 = CFrame.new(450.848, 127.236, 2151.76)
-local newCFrame17 = CFrame.new(484.392, 128.34, 2099.27)
-local newCFrame18 = CFrame.new(475.164, 127.142, 2087.88)
-local newCFrame19 = CFrame.new(499.198, 128.255, 2035.43)
-local newCFrame20 = CFrame.new(470.113, 128.141, 2030.68)
-local newCFrame21 = CFrame.new(489.192, 126.933, 1967.82)
-local newCFrame22 = CFrame.new(461.325, 126.964, 1956.1)
-local newCFrame23 = CFrame.new(482.333, 126.961, 1906.89)
-local newCFrame24 = CFrame.new(423.744, 126.931, 1917.34)
-local newCFrame25 = CFrame.new(403.845, 126.769, 1888.69)
+-- 8 Second Respawn
+local newCFrame7 = CFrame.new(-332.154, 157.245, 1720.59) -- Bag
+local newCFrame8 = CFrame.new(-318.449, 157.245, 1789.62) -- Bag
+local newCFrame9 = CFrame.new(-308.798, 157.245, 1776.9) -- Bag
+local newCFrame10 = CFrame.new(-354.386, 157.245, 1754.3) -- Bag
+local newCFrame11 = CFrame.new(-292.125, 157.245, 1817.51) -- Bag
+local newCFrame12 = CFrame.new(-295.208, 157.245, 1742.73) -- Bag
+local newCFrame13 = CFrame.new(-383.468, 157.245, 1753.46) -- Bag
+local newCFrame14 = CFrame.new(-276.062, 157.245, 1741.58) -- Bag
+local newCFrame15 = CFrame.new(-336.96, 157.245, 1811.11) -- Bag
+local newCFrame16 = CFrame.new(-271.596, 157.245, 1798.72) -- Bag
+local newCFrame17 = CFrame.new(-496.291, 668.439, 1823.41) -- Bag
+local newCFrame18 = CFrame.new(-478.391, 668.439, 1801.03) -- Bag
+local newCFrame19 = CFrame.new(-435.63, 668.439, 1776.51) -- Bag
+local newCFrame20 = CFrame.new(-438.759, 668.439, 1793.99) -- Bag
+local newCFrame21 = CFrame.new(-423.72, 668.439, 1834.42) -- Bag
+local newCFrame22 = CFrame.new(-402.772, 668.439, 1825.11) -- Bag
+-- 4.4 Seconds | Loop1: 11.4 Seconds |  (3.2 Seconds)
 
-local SmallFarm1 = CFrame.new(189.342, 127.155, 2339.06)
-local SmallFarm2 = CFrame.new(153.037, 127.155, 2359.41)
-local SmallFarm3 = CFrame.new(145.958, 127.155, 2410.17)
-local SmallFarm4 = CFrame.new(173.54, 127.155, 2462.69)
-local SmallFarm5 = CFrame.new(216.208, 127.155, 2470.83)
-local SmallFarm6 = CFrame.new(262.403, 127.155, 2445.66)
-local SmallFarm7 = CFrame.new(280.166, 127.155, 2401.41)
+-- 5 Second Respawn
+local newCFrame23 = CFrame.new(-280.617, 155.606, 1832.61) -- Coin
+local newCFrame24 = CFrame.new(-279.559, 155.606, 1814.09) -- Coin
+local newCFrame25 = CFrame.new(-287.13, 155.606, 1811.41) -- Coin
+local SmallFarm1 = CFrame.new(-265.579, 155.606, 1807.62) -- Coin
+local SmallFarm2 = CFrame.new(-267.076, 155.606, 1790.47) -- Coin
+local SmallFarm3 = CFrame.new(-281.391, 155.606, 1778.98) -- Coin
+local SmallFarm4 = CFrame.new(-305.084, 155.606, 1753.5) -- Coin
+local SmallFarm5 = CFrame.new(-316.383, 155.606, 1765.81) -- Coin
+-- Loop2: 18.2
+local SmallFarm6 = CFrame.new(-334.371, 155.606, 1767.5) -- Coin
+local SmallFarm7 = CFrame.new(-339.169, 155.642, 1788.15) -- Coin
+local SmallFarm8 = CFrame.new(-435.778, 666.8, 1856.29) -- Coin
+local SmallFarm9 = CFrame.new(-476.166, 666.8, 1815.84) -- Coin
+local SmallFarm10 = CFrame.new(-495.934, 666.8, 1797.06) -- Coin
+local SmallFarm11 = CFrame.new(-413.963, 666.8, 1846.85) -- Coin
+local SmallFarm12 = CFrame.new(-428.172, 666.8, 1821.31) -- Coin
+local SmallFarm13 = CFrame.new(-452.567, 666.8, 1795.22) -- Coin
+local SmallFarm14 = CFrame.new(-382.879, 666.8, 1842.74) -- Coin
+local SmallFarm15 = CFrame.new(-381.074, 666.8, 1820.85) -- Coin
+local SmallFarm16 = CFrame.new(-409.888, 666.8, 1802.9) -- Coin
+-- 8.2 Seconds | Loop1: 15.2 Seconds (3.8 Seconds)
+
+local SmallFarm17 = CFrame.new(-396.258, 666.8, 1790.04) -- Coin
+local SmallFarm18 = CFrame.new(-422.975, 666.8, 1766.4) -- Coin
+local SmallFarm19 = CFrame.new(-444.997, 666.8, 1780.7) -- Coin
+local SmallFarm20 = CFrame.new(-464.293, 666.8, 1766.31) -- Coin
+local SmallFarm21 = CFrame.new(-360.264, 189.35, 1729.05) -- Coin
+local SmallFarm22 = CFrame.new(-368.506, 155.606, 1754.47) -- Coin
+local SmallFarm23 = CFrame.new(-347.08, 155.606, 1703.47) -- Coin
+-- 16.6 Seconds (1.2 Seconds)
 
 
 local username = game:GetService("Players").LocalPlayer.Name
@@ -81,8 +107,8 @@ function AutoFarmCandyCanes2()
         local Player = game.Players.LocalPlayer
         if Player.Character then
             -- 5 second wait time
-            while wait(1.5) do
-                if not _G.SettingsTable.FarmCandyCanes2 then break end
+            while wait(.2) do
+                if not _G.SettingsTable.FarmCandyCanes1 then break end
                 wait(.71)
                 Player.Character.HumanoidRootPart.CFrame = SmallFarm1
                 wait(.71)
@@ -107,61 +133,197 @@ function AutoFarmCandyCanes1()
         local Player = game.Players.LocalPlayer
         if Player.Character then
             -- 5 second wait time
-            while wait(1.5) do
-                if not _G.SettingsTable.FarmCandyCanes1 then break end
-                -- Houses, 2.4 Seconds
+            while wait() do
+                if not _G.SettingsTable.FarmCandyCanes2 then break end
+
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame1
+                Player.Character.HumanoidRootPart.CFrame = newCFrame7 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame2
+                Player.Character.HumanoidRootPart.CFrame = newCFrame8 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame3
+                Player.Character.HumanoidRootPart.CFrame = newCFrame9 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame4
+                Player.Character.HumanoidRootPart.CFrame = newCFrame10 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame5
+                Player.Character.HumanoidRootPart.CFrame = newCFrame11 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame6
+                Player.Character.HumanoidRootPart.CFrame = newCFrame12 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame7
+                Player.Character.HumanoidRootPart.CFrame = newCFrame13 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame8
+                Player.Character.HumanoidRootPart.CFrame = newCFrame14 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame9
+                Player.Character.HumanoidRootPart.CFrame = newCFrame15 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame10
+                Player.Character.HumanoidRootPart.CFrame = newCFrame16 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame11
+                Player.Character.HumanoidRootPart.CFrame = newCFrame17 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame12
-                
-                -- Candycanes, 2.6 Seconds
+                Player.Character.HumanoidRootPart.CFrame = newCFrame18 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame13
+                Player.Character.HumanoidRootPart.CFrame = newCFrame19 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame14
+                Player.Character.HumanoidRootPart.CFrame = newCFrame20 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame15
+                Player.Character.HumanoidRootPart.CFrame = newCFrame21 -- Bag
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame16
+                Player.Character.HumanoidRootPart.CFrame = newCFrame22 -- Bag
+
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame17
+                Player.Character.HumanoidRootPart.CFrame = newCFrame1 -- Chest
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame18
+                Player.Character.HumanoidRootPart.CFrame = newCFrame2 -- Chest
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame19
+                Player.Character.HumanoidRootPart.CFrame = newCFrame3 -- Chest
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame20
+                Player.Character.HumanoidRootPart.CFrame = newCFrame4 -- Chest
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame21
+                Player.Character.HumanoidRootPart.CFrame = newCFrame5 -- Chest
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame22
+                Player.Character.HumanoidRootPart.CFrame = newCFrame6 -- Chest
+
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame23
+                Player.Character.HumanoidRootPart.CFrame = newCFrame23 -- Coin
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame24
+                Player.Character.HumanoidRootPart.CFrame = newCFrame24 -- Coin
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame25
+                Player.Character.HumanoidRootPart.CFrame = newCFrame25 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm1 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm2 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm3 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm4 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm5 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm6 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm7 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm8 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm9 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm10 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm11 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm12 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm13 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm14 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm15 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm16 -- Coin
+
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame7 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame8 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame9 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame10 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame11 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame12 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame13 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame14 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame15 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame16 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame17 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame18 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame19 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame20 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame21 -- Bag
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame22 -- Bag
+
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame23 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame24 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame25 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm1 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm2 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm3 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm4 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm5 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm6 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm7 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm8 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm9 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm10 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm11 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm12 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm13 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm14 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm15 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm16 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm17 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm18 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm19 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm20 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm21 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm22 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm23 -- Coin
+
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame23 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame24 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = newCFrame25 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm1 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm2 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm3 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm4 -- Coin
+                wait(.2)
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm5 -- Coin
+
             end
         end        
     end)
@@ -190,7 +352,7 @@ end
 
 function AutoBubbles()
     spawn(function()
-        while wait(.4) do
+        while wait(.3) do
             if not _G.SettingsTable.AutoBubble then break end
             local args = {
                 [1] = game:GetService("Players").LocalPlayer
@@ -253,7 +415,7 @@ local SettingsTab = Window:CreateTab("Settings")
 -- Autofarm
 local AutoFarmSelection = AutoFarmTab:CreateSection("Auto Settings")
 local AutoBubble = AutoFarmTab:CreateToggle({
-	Name = "Auto Bubble (0.4 sec Cooldown)",
+	Name = "Auto Bubble (0.3 sec Cooldown)",
 	CurrentValue = false,
 	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(bool)
@@ -264,13 +426,13 @@ local AutoBubble = AutoFarmTab:CreateToggle({
 	end,
 })
 local AutoTPToCandyCanes1 = AutoFarmTab:CreateToggle({
-	Name = "Auto Farm Candy Canes (OP FARM)",
+	Name = "Auto Farm Carnival Tokens (OP FARM)",
 	CurrentValue = false,
 	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(bool)
         _G.SettingsTable.FarmCandyCanes1 = bool
         if bool then
-            AutoFarmCandyCanes1()
+            AutoFarmCandyCanes2()
         end
 	end,
 })
@@ -281,7 +443,7 @@ local AutoTPToCandyCanes2 = AutoFarmTab:CreateToggle({
 	Callback = function(bool)
         _G.SettingsTable.FarmCandyCanes2 = bool
         if bool then
-            AutoFarmCandyCanes2()
+            AutoFarmCandyCanes1()
         end
 	end,
 })
@@ -435,3 +597,4 @@ while wait() do
     count = game:GetService("Players")[username].leaderstats.EggsOpened.Value
     EggsLabel:Set("Eggs Hatched: " .. abb(count))
 end
+
