@@ -1,4 +1,4 @@
-
+-- BL Legit GUI
 _G.SettingsTable = {
     AutoBubble = false;
     EggType = "";
@@ -10,6 +10,7 @@ _G.SettingsTable = {
     FPSSettings = 60;
     FarmCandyCanes2 = false;
 }
+
  
 -- 18 Second Respawn
 local newCFrame1 = CFrame.new(-369.354, 167.961, 1773.74) -- Chest
@@ -45,6 +46,7 @@ local newCFrame24 = CFrame.new(-279.559, 155.606, 1814.09) -- Coin
 local newCFrame25 = CFrame.new(-287.13, 155.606, 1811.41) -- Coin
 local SmallFarm1 = CFrame.new(-265.579, 155.606, 1807.62) -- Coin
 local SmallFarm2 = CFrame.new(-267.076, 155.606, 1790.47) -- Coin
+
 local SmallFarm3 = CFrame.new(-281.391, 155.606, 1778.98) -- Coin
 local SmallFarm4 = CFrame.new(-305.084, 155.606, 1753.5) -- Coin
 local SmallFarm5 = CFrame.new(-316.383, 155.606, 1765.81) -- Coin
@@ -62,14 +64,20 @@ local SmallFarm15 = CFrame.new(-381.074, 666.8, 1820.85) -- Coin
 local SmallFarm16 = CFrame.new(-409.888, 666.8, 1802.9) -- Coin
 -- 8.2 Seconds | Loop1: 15.2 Seconds (3.8 Seconds)
 
-local SmallFarm17 = CFrame.new(-396.258, 666.8, 1790.04) -- Coin
-local SmallFarm18 = CFrame.new(-422.975, 666.8, 1766.4) -- Coin
-local SmallFarm19 = CFrame.new(-444.997, 666.8, 1780.7) -- Coin
-local SmallFarm20 = CFrame.new(-464.293, 666.8, 1766.31) -- Coin
-local SmallFarm21 = CFrame.new(-360.264, 189.35, 1729.05) -- Coin
-local SmallFarm22 = CFrame.new(-368.506, 155.606, 1754.47) -- Coin
-local SmallFarm23 = CFrame.new(-347.08, 155.606, 1703.47) -- Coin
+local SmallFarm17 = CFrame.new(-452.645, 668.829, 1776.65) -- Chest
+local SmallFarm18 = CFrame.new(-414.263, 668.829, 1790.28) -- Chest
+local SmallFarm19 = CFrame.new(-405.236, 668.829, 1840.79) -- Chest
+local SmallFarm20 = CFrame.new(-455.477, 668.829, 1828.71) -- Chest
+local SmallFarm21 = CFrame.new(-444.071, 668.829, 1873.6) -- Chest
+local SmallFarm22 = CFrame.new(-492.202, 668.829, 1850.18) -- Chest
+local SmallFarm23 = CFrame.new(-553.025, 1421.23, 1952.99) -- Chest
 -- 16.6 Seconds (1.2 Seconds)
+
+local SmallFarm24 = CFrame.new(-553.526, 1421.23, 1984.85) -- Chest
+local SmallFarm25 = CFrame.new(-587.915, 1421.23, 1921.2) -- Chest
+local SmallFarm26 = CFrame.new(-592.945, 1421.23, 1939.87) -- Chest
+local SmallFarm27 = CFrame.new(-618.69, 1421.23, 1960.04) -- Chest
+local SmallFarm28 = CFrame.new(-588.302, 1421.23, 1995.71) -- Chest
 
 
 local username = game:GetService("Players").LocalPlayer.Name
@@ -308,15 +316,15 @@ function AutoFarmCandyCanes1()
                 Player.Character.HumanoidRootPart.CFrame = SmallFarm23 -- Coin
 
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame23 -- Coin
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm24 -- Coin
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame24 -- Coin
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm25 -- Coin
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = newCFrame25 -- Coin
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm26 -- Coin
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = SmallFarm1 -- Coin
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm27 -- Coin
                 wait(.2)
-                Player.Character.HumanoidRootPart.CFrame = SmallFarm2 -- Coin
+                Player.Character.HumanoidRootPart.CFrame = SmallFarm28 -- Coin
                 wait(.2)
                 Player.Character.HumanoidRootPart.CFrame = SmallFarm3 -- Coin
                 wait(.2)
@@ -415,7 +423,7 @@ local SettingsTab = Window:CreateTab("Settings")
 -- Autofarm
 local AutoFarmSelection = AutoFarmTab:CreateSection("Auto Settings")
 local AutoBubble = AutoFarmTab:CreateToggle({
-	Name = "Auto Bubble (0.3 sec Cooldown)",
+	Name = "Auto Bubble (1 sec Cooldown)",
 	CurrentValue = false,
 	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(bool)
@@ -597,4 +605,3 @@ while wait() do
     count = game:GetService("Players")[username].leaderstats.EggsOpened.Value
     EggsLabel:Set("Eggs Hatched: " .. abb(count))
 end
-
