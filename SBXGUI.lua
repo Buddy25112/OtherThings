@@ -1,3 +1,4 @@
+--SHX GUI
 -- Variables
 _G.SettingsTable = {
     EggType = "";
@@ -45,13 +46,11 @@ function HatchEgg()
 end
 function AutoRebirth()
     spawn(function()
-        while wait() do 
+        while wait(5) do 
             if not _G.SettingsTable.AutoRebirth then break end
 
             local args = {
-                [1] = game:GetService("Players").LocalPlayer.PlayerGui.MainUI.RebirthFrame.Holder[_G.SettingsTable.RebirthAmount].Cost,
-                [2] = game:GetService("Players").LocalPlayer.PlayerGui.MainUI.RebirthFrame.Holder[_G.SettingsTable.RebirthAmount].Amount,
-                [3] = true
+                [1] = _G.SettingsTable.RebirthAmount,
             }
             
             game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
@@ -296,7 +295,7 @@ local Window = Library.CreateLib("Sandbox Hatchers X UI", "Midnight")
 -- AutoFarmUI
 local AutoFarmTab = Window:NewTab("Auto Farm")
 local AutoRebirthSection = AutoFarmTab:NewSection("Auto Rebirth")
-local RebirthsLabel = AutoRebirthSection:NewLabel("⚠️ CAREFUL! COULD GET BANNED IF OVERUSED ⚠️")
+local RebirthsLabel = AutoRebirthSection:NewLabel("Auto Rebirth :DD")
 
 -- EggFarmingUI
 local EggFarmingTab = Window:NewTab("Egg Farming")
@@ -341,7 +340,7 @@ AutoTeleportSection:NewButton("Teleport To Egg", "Teleports You To The Selected 
 end)
 
 -- Auto Rebirth
-AutoRebirthSection:NewDropdown("Amount Of Rebirths", "Select rebirth option", {"Rebirth1", "Rebirth2", "Rebirth3","Rebirth4", "Rebirth5", "Rebirth6", "Rebirth7"}, function(RebirthAmountText)
+AutoRebirthSection:NewDropdown("Amount Of Rebirths", "Select rebirth option", {"1", "2", "3","4", "5", "6", "7","8","9","10","11","12","13","14","15","16","17","18","19"}, function(RebirthAmountText)
     _G.SettingsTable.RebirthAmount = RebirthAmountText
 end)
 AutoRebirthSection:NewToggle("Start Rebirthing", "Starts Rebirthing", function(bool)
