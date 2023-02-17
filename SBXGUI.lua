@@ -50,7 +50,7 @@ function AutoRebirth()
             if not _G.SettingsTable.AutoRebirth then break end
 
             local args = {
-                [1] = _G.SettingsTable.RebirthAmount,
+                [1] = tonumber(_G.SettingsTable.RebirthAmount),
             }
             
             game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
