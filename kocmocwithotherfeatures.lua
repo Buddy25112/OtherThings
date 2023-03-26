@@ -1,5 +1,6 @@
 -- NOT MY SCRIPT!!!
 -- Credits to the Kocmoc Developers!
+-- Kocmoc Editing
 repeat wait(0.1) until game:IsLoaded()
 
 getgenv().Star = "⭐"
@@ -1513,11 +1514,6 @@ task.spawn(function() while task.wait() do
                         api.tween(2, fieldpos) 
                         temptable.started.mondo = false
                     end
-                end
-                if (fieldposition-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > temptable.magnitude then
-                    api.tween(0.1, fieldpos)
-                    task.wait(2)
-                    if kocmoc.toggles.autosprinkler then makesprinklers() end
                 end
                 getprioritytokens()
                 if kocmoc.toggles.avoidmobs then avoidmob() end
