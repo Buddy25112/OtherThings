@@ -672,7 +672,7 @@ local EggFarmingParagraph = EggFarmingTab:CreateParagraph({
 })
 local ChooseEggToHatchDropdown = EggFarmingTab:CreateDropdown({
 	Name = "Choose Egg: (Dropdown)",
-	Options = {"Common Egg", "Spotted Egg", "Safe Egg", "Magma Egg", "Void Egg", "Lantern Egg", "Galaxy Egg", "Frosted Egg", "Banana Bandana on Nana Egg", "Nightmare Egg", "Season 2 Egg", "St. Patrick's 2023 Egg", "Goldfish Egg", "Pineapple Egg", "Snail Egg"},
+	Options = {"Common Egg", "Spotted Egg", "Safe Egg", "Magma Egg", "Void Egg", "Lantern Egg", "Galaxy Egg", "Frosted Egg", "Banana Bandana on Nana Egg", "Nightmare Egg", "Season 2 Egg", "St. Patrick's 2023 Egg", "Goldfish Egg", "Pineapple Egg", "Snail Egg", "Season 3 Egg"},
 	CurrentOption = "Common Egg",
 	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(EggTypetxt)
