@@ -173,7 +173,7 @@ end
 
 function AutoBuySuperLuckyBoost()
     spawn(function()
-        while wait(1) do 
+        while wait() do 
             if not _G.SettingsTable.AutoBuyLuck then break end
             local args = {
                 [1] = {
