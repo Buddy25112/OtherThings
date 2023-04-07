@@ -173,7 +173,7 @@ end
 
 function AutoBuySuperLuckyBoost()
     spawn(function()
-        while wait() do 
+        while wait(1) do 
             if not _G.SettingsTable.AutoBuyLuck then break end
             local args = {
                 [1] = {
@@ -380,7 +380,7 @@ end
 
 function HatchEgg()
     spawn(function()
-        while wait(1) do 
+        while wait() do 
             if not _G.SettingsTable.BuyEgg then break end
             if _G.SettingsTable.MultiHatch then
                 local args = {
