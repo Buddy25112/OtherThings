@@ -441,7 +441,7 @@ Chat.ChildAdded:Connect(function(instance)
     end
 end)
 
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Buddy25112/OtherThings/main/RayfieldNotBroken.lua'))()
 local Window = Rayfield:CreateWindow({
 	Name = "Hatchers Hub | Bubble Gum Clicker | Version 1.0.0",
 	LoadingTitle = "Bubble Legends GUI",
