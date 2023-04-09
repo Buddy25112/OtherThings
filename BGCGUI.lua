@@ -382,6 +382,7 @@ function HatchEgg()
     spawn(function()
         while wait() do 
             if not _G.SettingsTable.BuyEgg then break end
+		if _G.SettingsTable.MultiHatch then
 		local args = {
 		    [1] = {
 			[1] = {
