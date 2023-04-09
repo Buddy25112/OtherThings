@@ -382,20 +382,19 @@ function HatchEgg()
     spawn(function()
         while wait() do 
             if not _G.SettingsTable.BuyEgg then break end
-            if _G.SettingsTable.MultiHatch then
-                local args = {
-                    [1] = {
-                        [1] = {
-                            [1] = _G.SettingsTable.EggType,
-                            [2] = true
-                        },
-                        [2] = {
-                            [1] = false,
-                            [2] = false
-                        }
-                    }
-                }
-                game:GetService("ReplicatedStorage").Remotes:FindFirstChild("buy egg"):InvokeServer(unpack(args))
+		local args = {
+		    [1] = {
+			[1] = {
+			    [1] = _G.SettingsTable.EggType,
+			    [2] = 4
+			},
+			[2] = {
+			    [1] = false,
+			    [2] = false
+			}
+		    }
+		}
+		game:GetService("ReplicatedStorage").Remotes:FindFirstChild("buy egg"):InvokeServer(unpack(args))
             else
                 local args = {
                     [1] = {
